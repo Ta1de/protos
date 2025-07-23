@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "tuzov.sso.v1;sssov1";
+
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+message RegisterRequest {
+  string email = 1; // User registration email
+  string password = 2; // User registration password
+}
+message RegisterResponse {
+  int64 user_id = 1; // User ID registered user
+}
+
+message LoginRequest {
+  string email = 1; // User email to login
+  string password = 2; // User password to login
+  int32 app_id = 3; // ID app to login
+}
+
+message LoginResponse {
+  string token = 1; //Auth token
+}
+
+message IsAdminRequest {
+  int64 user_id = 1; // User ID is validate
+}
+
+message IsAdminResponse {
+  bool is_admin = 1; // Indicate user status
+}
