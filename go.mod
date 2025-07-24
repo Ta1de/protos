@@ -1,5 +1,7 @@
 module protos
 
+replace protos => github.com/Ta1de/protos v0.0.3
+
 go 1.23.0
 
 toolchain go1.23.11
