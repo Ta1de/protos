@@ -1,6 +1,6 @@
 module protos
 
-replace protos => github.com/Ta1de/protos v0.0.4
+replace protos => github.com/Ta1de/protos v0.0.5
 
 go 1.23.0
 
